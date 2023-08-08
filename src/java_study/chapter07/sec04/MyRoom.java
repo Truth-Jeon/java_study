@@ -3,6 +3,8 @@ package java_study.chapter07.sec04;
 public class MyRoom {
 
 	public static void main(String[] args) {
+		System.out.println(Tv.count); // count는 static 변수이므로 인스턴스가 아닌, 클래스 명으로 접근함.
+
 		Tv myTv = new Tv();
 		Tv yourTv = new Tv();
 
@@ -14,7 +16,6 @@ public class MyRoom {
 		yourTv.setChannel(15);
 		yourTv.setVolume(20);
 
-		System.out.println(myTv);
 		System.out.println(yourTv);
 
 		// 배열 선언 (타입은 당연히 Tv여야 함. -> 왜냐하면 Tv클래스의 값을 넣어줄 것이므로. 타입도 당연히 Tv임.)
@@ -40,5 +41,13 @@ public class MyRoom {
 		// 하지만 참조형은 참조값을 불러와서 직접적으로 넣어줘야 함.
 		Tv[] tvArrs = { new Tv(10, 10, false), new Tv(20, 20, false), new Tv(30, 30, false), new Tv(40, 40, false),
 				new Tv(50, 50, false), };
+
+		Tv tv3 = new Tv();
+		tv3.setChannel(10);
+		System.out.println("tv3의 serial number : " + tv3.getSerial());
+		System.out.println(Tv.count); // Tv 클래스가 참조된 횟수
+		System.out.println(myTv.count); // 가능하지만, count의 의미상 인스턴스 변수로 호출하는 것은 바람직하지 않다.
+		// 클래스로 호출하는 것이 바람직하다.
+		System.out.println("myTv의 serial number : " + myTv.getSerial());
 	}
 }

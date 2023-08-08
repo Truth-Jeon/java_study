@@ -1,6 +1,9 @@
 package java_study.chapter07.sec05;
 
-public class Bbs {
+public class Bbs { // 값만 다루고 있음. 이것을 보관하기 위한 역할.
+	// 즉, 값을 저장(표현)하기 위한 역할을 Bbs.class 는 하고있다.
+	// 이것을 비즈니스 로직이라고 함.
+	// 또는 VO(Value Object)라고도 함.
 	private int no;
 	private String title;
 	private String content;
